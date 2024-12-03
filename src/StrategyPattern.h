@@ -4,14 +4,6 @@
 #include <iostream>
 #include <memory>
 
-namespace MUTU {}
-#define mmm(a) a
-void BAR();
-
-class test {
-  int temp;
-};
-
 //! Design Principle
 // Identify the aspects of your application that vary and separate
 // them from what stays the same.

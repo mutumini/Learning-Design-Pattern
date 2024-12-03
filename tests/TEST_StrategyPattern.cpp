@@ -3,7 +3,7 @@
 
 #include "StrategyPattern.h"
 
-void RunMain(int argc, char* argv[]) {  // NOLINT
+void TestStrategyPattern() {  // NOLINT
   std::cout << "Test Strategy Pattern!" << std::endl;
 
   std::shared_ptr<Duck> duck = std::make_shared<MallardDuck>();
