@@ -1,9 +1,10 @@
 #ifndef SRC_OBSERVERPATTERN_H_
 #define SRC_OBSERVERPATTERN_H_  // NOLINT
 
+#include <algorithm>
 #include <memory>
 #include <vector>
-#include <algorithm>
+#include <iostream>
 
 //! Design Principle
 // Strive for loosely coupled designs between objects that interact.
@@ -64,6 +65,60 @@ private:
   Tr m_temperature;
   Tr m_humidity;
   Tr m_pressure;
+};
+
+class CurrentCondtionsDisplay : public Observer {
+public:
+  float       m_temperature;
+  float       m_humidity;
+  float       m_pressure;
+  WeatherData m_weatherData;
+
+  CurrentCondtionsDisplay(WeatherData& weatherData) : m_weatherData(weatherData) {
+    m_weatherData = weatherData;
+    weatherData.addObserver(std::make_shared<CurrentCondtionsDisplay>(*this));
+  }
+
+  void update(float temperature, float humidity, float pressure) override {
+    m_temperature = temperature;
+    m_humidity    = humidity;
+    m_pressure    = pressure;
+    display();
+  }
+
+  void display() {
+    std::cout << "Current conditions: " << m_temperature << "F degrees, " << m_humidity
+              << "% humidity, and " << m_pressure << " pressure." << std::endl;
+  }
+};
+
+class StatisticsDisplay : public Observer {
+public:
+  using Tr = float;
+
+  std::vector<Tr> m_temperature;
+  WeatherData m_weatherData;
+
+  StatisticsDisplay(const WeatherData& weatherData) {
+    m_weatherData = weatherData;
+    m_weatherData.addObserver(std::make_shared<StatisticsDisplay>(*this));
+  }
+
+  void update(Tr temperature, Tr humidity, Tr pressure) override {
+    m_temperature.push_back(temperature);
+    display();
+  }
+  void display() {
+    // Find min and max
+    auto [minIt, maxIt] = std::minmax_element(m_temperature.begin(), m_temperature.end());
+    int minVal          = *minIt;
+    int maxVal          = *maxIt;
+
+    // Find average
+    double avg = std::accumulate(m_temperature.begin(), m_temperature.end(), 0.0f) / m_temperature.size();
+
+    std::cout << "Avg/Max/Min temperature = " << avg << "/" << maxVal << "/" << minVal << std::endl;
+  }
 };
 
 #endif  // SRC_OBSERVERPATTERN_H_
