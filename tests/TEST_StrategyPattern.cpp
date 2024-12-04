@@ -5,7 +5,7 @@
 #include "TEST_Pattern.h"
 
 void TestStrategyPattern() {  // NOLINT
-  std::cout << "Test Strategy Pattern!" << std::endl;
+  std::cout << "Test Strategy Pattern!\n";
 
   std::shared_ptr<Duck> duck = std::make_shared<MallardDuck>();
   duck->performQuack();

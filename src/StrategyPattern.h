@@ -21,12 +21,12 @@ public:
 
 class Quack : public QuackBehavior {
 public:
-  void quack() override { std::cout << "Quack! From Quack::quack()" << std::endl; }
+  void quack() override { std::cout << "Quack! From Quack::quack()\n"; }
 };
 
 class Squeak : public QuackBehavior {
 public:
-  void quack() override { std::cout << "Squeak! From Squeak::quack()" << std::endl; }
+  void quack() override { std::cout << "Squeak! From Squeak::quack()\n"; }
 };
 
 class Duck {
@@ -34,7 +34,7 @@ public:
   Duck() = default;
   void         performQuack() { m_quack_behavior->quack(); }
   virtual void setQuackBehavior(std::shared_ptr<QuackBehavior> quack) { this->m_quack_behavior = quack; }
-  void         swim() { std::cout << "All ducks can swim, even decoys! From Duck::swim()" << std::endl; }
+  void         swim() { std::cout << "All ducks can swim, even decoys! From Duck::swim()\n"; }
 
 protected:
   std::shared_ptr<QuackBehavior> m_quack_behavior;

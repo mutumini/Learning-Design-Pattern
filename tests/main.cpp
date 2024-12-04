@@ -2,12 +2,19 @@
 
 #include "TEST_Pattern.h"
 
+void PrintSingleLine() {
+  std::cout << "<--------------------------------------------------------------------------->\n";
+}
+
 int main(int argc, char* argv[]) {  // NOLINT
-  std::cout << "Hello, World!" << std::endl;
-  std::cout << "<--------------------------------------------------------------------------->" << std::endl;
+  std::cout << "Hello, World!\n";
+
+  PrintSingleLine();
   TestStrategyPattern();
-  std::cout << "---------------------------------------------------------------------------" << std::endl;
+
+  PrintSingleLine();
   TestObserverPattern();
-  std::cout << "---------------------------------------------------------------------------" << std::endl;
+
+  PrintSingleLine();
   return 0;
 }

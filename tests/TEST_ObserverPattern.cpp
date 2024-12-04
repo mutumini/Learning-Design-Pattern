@@ -2,6 +2,8 @@
 #include "TEST_Pattern.h"
 
 void TestObserverPattern() {  // NOLINT
+  std::cout << "Test Observer Pattern!\n";
+
   WeatherData weatherData;
   weatherData.setMeasurements(80, 65, 30.4f);
 

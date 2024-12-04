@@ -89,7 +89,7 @@ public:
 
   void display() {
     std::cout << "Current conditions: " << m_temperature << "F degrees, " << m_humidity
-              << "% humidity, and " << m_pressure << " pressure." << std::endl;
+              << "% humidity, and " << m_pressure << " pressure.\n";
   }
 };
 
