@@ -2,6 +2,7 @@
 #include <memory>
 
 #include "StrategyPattern.h"
+#include "TEST_Pattern.h"
 
 void TestStrategyPattern() {  // NOLINT
   std::cout << "Test Strategy Pattern!" << std::endl;

@@ -2,9 +2,10 @@
 #define SRC_OBSERVERPATTERN_H_  // NOLINT
 
 #include <algorithm>
-#include <memory>
-#include <vector>
 #include <iostream>
+#include <memory>
+#include <numeric>
+#include <vector>
 
 //! Design Principle
 // Strive for loosely coupled designs between objects that interact.
@@ -97,11 +98,11 @@ public:
   using Tr = float;
 
   std::vector<Tr> m_temperature;
-  WeatherData m_weatherData;
+  WeatherData     m_weatherData;
 
-  StatisticsDisplay(const WeatherData& weatherData) {
+  StatisticsDisplay(WeatherData& weatherData) {
     m_weatherData = weatherData;
-    m_weatherData.addObserver(std::make_shared<StatisticsDisplay>(*this));
+    weatherData.addObserver(std::make_shared<StatisticsDisplay>(*this));
   }
 
   void update(Tr temperature, Tr humidity, Tr pressure) override {
