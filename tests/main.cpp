@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "TEST_Pattern.h"
+#include "TEST.h"
 
 void PrintSingleLine() {
   std::cout << "<--------------------------------------------------------------------------->\n";
@@ -14,6 +14,9 @@ int main(int argc, char* argv[]) {  // NOLINT
 
   PrintSingleLine();
   TestObserverPattern();
+
+  PrintSingleLine();
+  TestDecoratorPattern();
 
   PrintSingleLine();
   return 0;
