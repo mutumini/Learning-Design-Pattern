@@ -16,35 +16,35 @@
 
 class QuackBehavior {
 public:
-  virtual void quack() = 0;
+  virtual void quack() const noexcept = 0;
 };
 
 class Quack : public QuackBehavior {
 public:
-  void quack() override { std::cout << "Quack! From Quack::quack()" << std::endl; }
+  void quack() const noexcept override { std::cout << "Quack! From Quack::quack()\n"; }
 };
 
 class Squeak : public QuackBehavior {
 public:
-  void quack() override { std::cout << "Squeak! From Squeak::quack()" << std::endl; }
+  void quack() const noexcept override { std::cout << "Squeak! From Squeak::quack()\n"; }
 };
 
 class Duck {
 public:
   Duck() = default;
-  void         performQuack() { m_quack_behavior->quack(); }
-  virtual void setQuackBehavior(std::shared_ptr<QuackBehavior> quack) { this->m_quack_behavior = quack; }
-  void         swim() { std::cout << "All ducks can swim, even decoys! From Duck::swim()" << std::endl; }
+  Duck(const std::shared_ptr<QuackBehavior> quack) : m_quackBehavior(quack) {}
 
-protected:
-  std::shared_ptr<QuackBehavior> m_quack_behavior;
+  void performQuack() const noexcept { m_quackBehavior->quack(); }
+
+  void setQuackBehavior(std::shared_ptr<QuackBehavior> quack) noexcept { m_quackBehavior = quack; }
 
 private:
+  std::shared_ptr<QuackBehavior> m_quackBehavior;
 };
 
 class MallardDuck : public Duck {
 public:
-  MallardDuck() { this->m_quack_behavior = std::make_shared<Quack>(); }
+  MallardDuck() : Duck(std::make_shared<Quack>()) {}
 };
 
 #endif  // SRC_STRATEGYPATTERN_H_

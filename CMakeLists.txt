@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(design_pattern
-    DESCRIPTION "Just for learning!"
-    VERSION 0.0.0
-    LANGUAGES C CXX)
+  DESCRIPTION "Just for learning!"
+  VERSION 0.0.0
+  LANGUAGES C CXX)
 
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 

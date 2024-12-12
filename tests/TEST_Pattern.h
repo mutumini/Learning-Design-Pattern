@@ -1,2 +1,0 @@
-void TestStrategyPattern();
-void TestObserverPattern();
