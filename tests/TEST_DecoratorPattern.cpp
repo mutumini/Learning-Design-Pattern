@@ -4,6 +4,7 @@
 #include "TEST.h"
 
 void TestDecoratorPattern() {
+  PrintSingleLine();
   std::cout << "Test Decorator Pattern!\n";
 
   std::shared_ptr<Beverage> beverage{std::make_shared<Espresso>()};

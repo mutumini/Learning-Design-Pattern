@@ -5,6 +5,7 @@
 #include "TEST.h"
 
 void TestStrategyPattern() {
+  PrintSingleLine();
   std::cout << "Test Strategy Pattern!\n";
 
   std::unique_ptr<Duck> duck = std::make_unique<MallardDuck>();
