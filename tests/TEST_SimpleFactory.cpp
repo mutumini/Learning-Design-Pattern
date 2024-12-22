@@ -19,6 +19,7 @@ void OrderPizza(const Factory& factory, PizzaType type) {
 }
 
 void TestSimpleFactory() {
+  PrintSingleLine();
   std::cout << "Test Simple Factory!\n";
   SimplePizzaFactory factory;
   OrderPizza(factory, PizzaType::kCheese);

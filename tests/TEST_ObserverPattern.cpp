@@ -2,6 +2,7 @@
 #include "TEST.h"
 
 void TestObserverPattern() {
+  PrintSingleLine();
   std::cout << "Test Observer Pattern!\n";
 
   WeatherData weatherData;

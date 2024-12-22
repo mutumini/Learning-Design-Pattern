@@ -8,7 +8,11 @@
 #include <memory>
 #include <string>
 
-enum struct PizzaType : int { kInvalid = -1, kCheese = 0, kPepperoni };
+enum struct PizzaType : int {
+  kInvalid = -1,
+  kCheese  = 0,
+  kPepperoni,
+};
 
 class Pizza {
 public:
