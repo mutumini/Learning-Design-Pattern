@@ -19,5 +19,7 @@ int main(int argc, char* argv[]) {  // NOLINT
 
   TestFactoryMethodPattern();
 
+  TestAbstractFactoryPattern();
+
   return 0;
 }

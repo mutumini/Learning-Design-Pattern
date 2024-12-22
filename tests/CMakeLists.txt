@@ -10,4 +10,6 @@ target_sources(${app} PRIVATE
   TEST_ObserverPattern.cpp
   TEST_DecoratorPattern.cpp
   TEST_SimpleFactory.cpp
+  TEST_FactoryMethodPattern.cpp
+  TEST_AbstractFactoryPattern.cpp
 )
