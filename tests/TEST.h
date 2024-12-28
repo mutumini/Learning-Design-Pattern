@@ -9,5 +9,6 @@ void TestDecoratorPattern();
 void TestSimpleFactory();
 void TestFactoryMethodPattern();
 void TestAbstractFactoryPattern();
+void TestSingletonPattern();
 
 #endif  // TESTS_TEST_PATTERN_H_

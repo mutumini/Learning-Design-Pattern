@@ -2,10 +2,6 @@
 
 #include "TEST.h"
 
-void PrintSingleLine() {
-  std::cout << "<--------------------------------------------------------------------------->\n";
-}
-
 int main(int argc, char* argv[]) {  // NOLINT
   std::cout << "Hello, World!\n";
 
@@ -20,6 +16,8 @@ int main(int argc, char* argv[]) {  // NOLINT
   TestFactoryMethodPattern();
 
   TestAbstractFactoryPattern();
+
+  TestSingletonPattern();
 
   return 0;
 }

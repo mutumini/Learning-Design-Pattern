@@ -6,10 +6,12 @@ target_include_directories(${app} PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_
 
 target_sources(${app} PRIVATE
   main.cpp
+  TEST.cpp
   TEST_StrategyPattern.cpp
   TEST_ObserverPattern.cpp
   TEST_DecoratorPattern.cpp
   TEST_SimpleFactory.cpp
   TEST_FactoryMethodPattern.cpp
   TEST_AbstractFactoryPattern.cpp
+  TEST_SingletonPattern.cpp
 )
